@@ -13,6 +13,8 @@ import {
     SidebarProvider,
     SidebarTrigger,
 } from "@/components/ui/sidebar"
+import {Chart} from "@/components/Chart";
+import {ProjectList} from "@/components/ProjectList";
 
 export default function Page() {
     return (
@@ -39,12 +41,27 @@ export default function Page() {
                     </div>
                 </header>
                 <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-                    <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                        <div className="aspect-video rounded-xl bg-muted/50"/>
-                        <div className="aspect-video rounded-xl bg-muted/50"/>
-                        <div className="aspect-video rounded-xl bg-muted/50"/>
+                    <div className="grid auto-rows-min gap-4 md:grid-cols-2">
+                        <div className="aspect-video rounded-xl bg-muted/50">
+                            <div className={"p-4 sf_pro font-medium text-[24px]"}>
+                                Total Value Locked
+                            </div>
+                            <div className={"h-[70%]"}>
+                                <Chart />
+                            </div>
+                        </div>
+                        <div className="aspect-video rounded-xl bg-muted/50">
+                            <div className={"p-4 sf_pro font-medium text-[24px]"}>
+                                Activity
+                            </div>
+                            <div className={"h-[70%]"}>
+                                <Chart/>
+                            </div>
+                        </div>
                     </div>
-                    <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min"/>
+                    <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
+                        <ProjectList />
+                    </div>
                 </div>
             </SidebarInset>
         </SidebarProvider>

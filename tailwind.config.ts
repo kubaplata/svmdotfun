@@ -6,6 +6,7 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+		'./node_modules/@tremor/**/*.{js,ts,jsx,tsx}',
   ],
   plugins: [require("tailwindcss-animate")],
     theme: {
@@ -68,5 +69,21 @@ export default {
     			}
     		}
     	}
-    }
+    },
+	safelist: [
+		...['[#c77dff]', "[#e71d36]", "[#EFE9AE]", "[#FFFFFF]", "[#EF2D56]", "[#0CCE6B]", "[#DFE0E2]", "[#000000]", "[#791E94]"].flatMap((customColor) => [
+			`bg-${customColor}`,
+			`border-${customColor}`,
+			`hover:bg-${customColor}`,
+			`hover:border-${customColor}`,
+			`hover:text-${customColor}`,
+			`fill-${customColor}`,
+			`ring-${customColor}`,
+			`stroke-${customColor}`,
+			`text-${customColor}`,
+			`ui-selected:bg-${customColor}]`,
+			`ui-selected:border-${customColor}]`,
+			`ui-selected:text-${customColor}`,
+		]),
+	],
 } satisfies Config;

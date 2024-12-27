@@ -80,3 +80,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+* {
+  font-family: 'SF Pro', sans-serif;
+}
+
+/*.sf_pro {*/
+/*  font-family: 'SF Pro', sans-serif;*/
+/*}*/
